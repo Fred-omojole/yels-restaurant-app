@@ -44,7 +44,11 @@ poppins:['var(--font-poppins)','sans-seriff'],
       },
 
       backgroundImage: {
-
+        hero: "url(hero/bg.png)",
+        menu: "url(menu/bg.png)",
+        reservation: "url(reservation/bg.png)",
+        footer: "url(footer/bg.png)",
+        
       },
       keyframes: {
         "accordion-down": {
