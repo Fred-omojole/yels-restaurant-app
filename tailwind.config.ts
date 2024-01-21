@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        hero: "url(/hero/bg.png)",
+        menu: "url(/menu/bg.png)",
+        reservation: "url(/reservation/bg.png)",
+        footer: "url(/footer/bg.png)",
+        
       },
     },
   },

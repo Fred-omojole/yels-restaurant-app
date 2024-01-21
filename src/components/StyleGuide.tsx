@@ -14,8 +14,8 @@ import {
 
 import Link from "next/link"
 // import { Button } from "./button"
-import { Label } from "./label"
-import { Input } from "./input"
+import { Label } from "./ui/label"
+import { Input } from "./ui/input"
 // import { Popover, PopoverTrigger } from "@radix-ui/react-popover"
 
 import {
@@ -95,7 +95,7 @@ const StyleGuide = () => {
 </div>
 {/* select */}
 <Select>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-full">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>
