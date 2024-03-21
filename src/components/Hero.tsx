@@ -54,7 +54,7 @@ const Hero = () => {
               viewport={{ once: false, amount: 0.4 }}
             >
               {/* // eslint-disable-next-line react/no-unescaped-entities */}
-              <Button className=" transition hover:ease-in-out duration-500 ">
+              <Button className=" transition hover:ease-in-out duration-500 rounded ">
                 Let's eat
               </Button>
             </motion.div>
