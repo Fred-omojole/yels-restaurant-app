@@ -15,12 +15,20 @@ const Header = () => {
       // scroll detection
       setActive(window.scrollY > 100);
     };
-    //event
+    //event listener (add)
     window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50 left-0 right-0 transition-all duration-200">
+    <header
+      className={`${
+        active ? " bg-black py-4 " : "bg-none py-8"
+      } fixed top-0 w-full z-50 left-0 transition-all duration-200`}
+    >
       Header
     </header>
   );
