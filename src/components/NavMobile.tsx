@@ -37,16 +37,60 @@ const links = [
 ];
 
 const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={`${containerStyles}`}>
-      {/* {links.map((link, index) => (
-        <Link href={link.path} key={index}>
-          {link.name}
-        </Link>
-      ))} */}
-      <div>
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="cursor-pointer outline-none"
+      >
         <RiMenu2Line className="text-3xl text-white transition-all " />
       </div>
+      <aside
+        className={`${
+          isOpen ? "right-0" : "-right-full"
+        } bg-black fixed z-20  w-full p-10 bottom-0 top-0 transition-all duration-500 `}
+      >
+        <div className="flex flex-col items-center justify-between h-full">
+          <div
+            onClick={() => setIsOpen(false)}
+            className="cursor-pointer text-4xl text-white absolute flex w-10 h-10 left-8 top-8 items-center bg-green justify-center rounded-lg"
+          >
+            <IoCloseOutline />
+          </div>
+          <Link href="/">
+            <Image
+              className="mt-1"
+              src="/logo.svg"
+              width={90}
+              height={36}
+              alt=""
+            />
+          </Link>
+          <div className="capitalize">
+            {links.map((link, index) => {
+              return (
+                <ScrollLink
+                  className="flex items-center"
+                  key={index}
+                  to={link.path}
+                  offset={link.offset}
+                  smooth={false}
+                >
+                  <div className={`${iconStyles}`}>{link.icon}</div>
+                  <div className={`${iconStyles}`}>{link.name}</div>
+                </ScrollLink>
+              );
+            })}
+          </div>
+          <ScrollLink to=" reservation" smooth offset={-150}>
+            <Button className="rounded mb-1" variant="orange">
+              {" "}
+              Book a table{" "}
+            </Button>
+          </ScrollLink>
+        </div>
+      </aside>
     </div>
   );
 };
