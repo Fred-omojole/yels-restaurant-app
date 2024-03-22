@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { Button } from "./ui/button";
-import { Viewport } from "@radix-ui/react-select";
+// import { Viewport } from "@radix-ui/react-select";
 
 const Hero = () => {
   return (
