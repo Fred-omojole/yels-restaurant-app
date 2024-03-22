@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StyleGuide from "@/components/StyleGuide";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="w-full max-w-[1440px] bg-white mx-auto overflow-hidden">
       <Header />
       <Hero />
+      <Menu />
       {/* <StyleGuide /> */}
       <div className="h-[4000px]"></div>
     </main>
