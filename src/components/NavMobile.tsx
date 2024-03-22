@@ -67,18 +67,18 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
               alt=""
             />
           </Link>
-          <div className="capitalize">
+          <div className="flex flex-col gap-y-8">
             {links.map((link, index) => {
               return (
                 <ScrollLink
-                  className="flex items-center"
+                  className="flex items-center gap-x-3"
                   key={index}
                   to={link.path}
                   offset={link.offset}
                   smooth={false}
                 >
                   <div className={`${iconStyles}`}>{link.icon}</div>
-                  <div className={`${iconStyles}`}>{link.name}</div>
+                  <div className={`${linkStyles}`}>{link.name}</div>
                 </ScrollLink>
               );
             })}
