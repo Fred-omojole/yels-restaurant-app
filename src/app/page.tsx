@@ -1,8 +1,9 @@
 // import Board from "@/components/Board";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import MenuBar from "@/components/MenuBar";
 import StyleGuide from "@/components/StyleGuide";
-import Menu, { MenuBar } from "@/components/Menu";
+
 import Image from "next/image";
 
 export default function Home() {
