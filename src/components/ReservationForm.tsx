@@ -28,7 +28,7 @@ import {
 import { useState } from "react";
 
 const ReservationForm = () => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <form className="flex flex-col gap-y-10">
       <div className="grid gap-[30px]">
@@ -90,7 +90,6 @@ const ReservationForm = () => {
         </div>
       </div>
       <Button className="uppercase w-full xl:w-auto xl:self-end rounded">
-        {" "}
         Book a table
       </Button>
     </form>

@@ -1,4 +1,5 @@
 // import Board from "@/components/Board";
+import About from "@/components/About";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MenuBar from "@/components/MenuBar";
@@ -14,7 +15,7 @@ export default function Home() {
       <Hero />
       <MenuBar />
       <Reservation />
-
+      <About />
       {/* <StyleGuide /> */}
       <div className="h-[4000px]"></div>
     </main>
