@@ -4,13 +4,12 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import NAV from "./Nav";
-import navMobile from "./NavMobile";
+
 import { useState } from "react";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
 import NavMobile from "./NavMobile";
-// import { useEffect } from "react";
+
 const Header = () => {
   const [active, setActive] = useState(false);
 

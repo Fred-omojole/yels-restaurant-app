@@ -1,21 +1,30 @@
-import Link from "next/link";
+import { Link, Link as ScrollLink } from "react-scroll";
+
+interface InternalLinkProps {
+  path: string;
+  offset?: number;
+}
+
 const links = [
-  { path: "home", name: "home", offset: -50 },
-
-  { path: "menu", name: "menu", offset: -50 },
-
-  { path: "about", name: "about", offset: -150 },
-
-  { path: "contact", name: "contact", offset: 0 },
+  { path: "home", name: "Home", offset: 0 },
+  { path: "menu", name: "Menu", offset: 0 },
+  { path: "about", name: "About", offset: -0 },
+  { path: "contact", name: "Contact", offset: 0 },
 ];
 
-const Nav = ({ containerStyles, linkStyles }) => {
+const Nav = ({
+  containerStyles,
+  linkStyles,
+}: {
+  containerStyles: string;
+  linkStyles: string;
+}) => {
   return (
     <nav className={`${containerStyles}`}>
       {links.map((link, index) => (
         <Link
           key={index}
-          href={link.path}
+          to={link.path}
           spy={true}
           smooth={true}
           offset={link.offset}

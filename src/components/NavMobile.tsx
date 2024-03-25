@@ -36,7 +36,15 @@ const links = [
   },
 ];
 
-const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
+const NavMobile = ({
+  containerStyles,
+  iconStyles,
+  linkStyles,
+}: {
+  containerStyles: string;
+  iconStyles: string;
+  linkStyles: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={`${containerStyles}`}>
@@ -71,7 +79,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
             {links.map((link, index) => {
               return (
                 <ScrollLink
-                  className="flex items-center gap-x-3"
+                  className="flex items-center"
                   key={index}
                   to={link.path}
                   offset={link.offset}
