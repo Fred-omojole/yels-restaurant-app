@@ -27,7 +27,23 @@ import {
 } from "@/components/ui/select";
 
 const ReservationForm = () => {
-  return <div>ReservationForm</div>;
+  return (
+    <form>
+      <div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
+          <div>
+            <label htmlFor="firstname"> first name</label>
+            <Input id="firstname" type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="lastname">last name</label>
+            <Input id="lastname" type="text" />
+          </div>
+        </div>
+      </div>
+    </form>
+  );
 };
 
 export default ReservationForm;
