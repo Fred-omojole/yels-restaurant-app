@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MenuBar from "@/components/MenuBar";
-import StyleGuide from "@/components/StyleGuide";
+// import StyleGuide from "@/components/StyleGuide";
 
 import Image from "next/image";
 
