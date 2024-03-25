@@ -31,7 +31,7 @@ const ReservationForm = () => {
   const [date, setDate] = useState();
   return (
     <form className="">
-      <div>
+      <div className="grid gap-[30px]">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
           <div>
             <label htmlFor="firstname"> first name</label>
@@ -44,11 +44,10 @@ const ReservationForm = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
+        <div className="grid  grid-cols-1 xl:grid-cols-2 gap-[30px]">
           {/* calendar */}
           <div>
             <label> date </label>
-
             <Popover>
               <PopoverTrigger asChild>
                 <Button
@@ -69,8 +68,28 @@ const ReservationForm = () => {
               </PopoverContent>
             </Popover>
           </div>
+          {/* select */}
+          <div>
+            <Label> person </Label>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="How many people?" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>People</SelectLabel>
+                  <SelectItem value="1">1</SelectItem>
+                  <SelectItem value="2">2</SelectItem>
+                  <SelectItem value="3">3</SelectItem>
+                  <SelectItem value="4">4</SelectItem>
+                  <SelectItem value="5">5</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
+      <Button> Book a table</Button>
     </form>
   );
 };

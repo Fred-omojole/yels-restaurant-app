@@ -46,7 +46,6 @@ const Header = () => {
           {/* button */}
           <ScrollLink to="reservation" smooth={true}>
             <Button className="rounded" variant="orange" size="sm">
-              {" "}
               Book a table
             </Button>
           </ScrollLink>

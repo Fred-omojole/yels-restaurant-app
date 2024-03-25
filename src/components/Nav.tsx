@@ -6,10 +6,11 @@ interface InternalLinkProps {
 }
 
 const links = [
-  { path: "home", name: "Home", offset: 0 },
-  { path: "menu", name: "Menu", offset: 0 },
-  { path: "about", name: "About", offset: -0 },
+  { path: "home", name: "Home", offset: -50 },
+  { path: "menu", name: "Menu", offset: -50 },
+  { path: "about", name: "About", offset: -150 },
   { path: "contact", name: "Contact", offset: 0 },
+  // { path: "reservation", name: "reservation", offset: 50 },
 ];
 
 const Nav = ({
