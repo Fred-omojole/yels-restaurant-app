@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import MenuBar from "@/components/MenuBar";
 import Reservation from "@/components/Reservation";
 // import StyleGuide from "@/components/StyleGuide";
-
+import Map from "@/components/Map";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
       <MenuBar />
       <Reservation />
       <About />
+      <Map />
       {/* <StyleGuide /> */}
       <div className="h-[4000px]"></div>
     </main>

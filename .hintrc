@@ -3,7 +3,8 @@
     "development"
   ],
   "hints": {
-    "typescript-config/is-valid": "off"
+    "typescript-config/is-valid": "off",
+    "typescript-config/consistent-casing": "off"
   },
   "browserslist": [
     "defaults",
