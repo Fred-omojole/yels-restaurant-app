@@ -19,7 +19,7 @@ import "leaflet/dist/leaflet.css";
 //   subtitle: string;
 // }
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const markers = [
   {
@@ -48,6 +48,9 @@ const customIcon = new Icon({
 });
 
 const Map = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px )",
+  });
   // const isMobile = useMediaQuery({
   //   query: "(max-width: 768px )",
   // });
@@ -72,7 +75,7 @@ const Map = () => {
       <MapContainer
         center={[34.052235, -118.243683]}
         zoom={10}
-        className="h-[900px] z-10"
+        className={`${isMobile ? "h-[300px]" : "h-[900px]"} z-10`}
         zoomControl={false}
       >
         <TileLayer
