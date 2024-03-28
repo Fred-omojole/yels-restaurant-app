@@ -5,7 +5,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
-import { LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 // variants={fadeIn("center", 0.2)}
