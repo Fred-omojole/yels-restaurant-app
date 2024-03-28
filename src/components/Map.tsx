@@ -2,13 +2,20 @@
 import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
+import { Icon, LatLngExpression } from "leaflet";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
 import "leaflet/dist/leaflet.css";
 
-const markers = [
+type MarkerData = {
+  position: LatLngExpression;
+  title: string;
+  subtitle: string;
+  image: string;
+};
+
+const markers: MarkerData[] = [
   {
     position: [34.052235, -118.243683],
     title: "Location 1",
@@ -31,7 +38,7 @@ const markers = [
 
 const customIcon = new Icon({
   iconUrl: "/pin-solid.svg",
-  iconsize: [40, 40],
+  iconSize: [40, 40],
 });
 
 const Map = () => {
@@ -51,7 +58,14 @@ const Map = () => {
           attribution='&copy; <a href = "https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
-        {/*  */}
+        {/* markers */}
+        {markers.map((marker, index) => (
+          <Marker
+            key={index}
+            position={marker.position}
+            icon={customIcon}
+          ></Marker>
+        ))}
       </MapContainer>
     </section>
   );
