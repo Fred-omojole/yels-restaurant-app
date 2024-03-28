@@ -7,18 +7,6 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 
 import "leaflet/dist/leaflet.css";
-// variants={fadeIn("center", 0.2)}
-// initial="hidden"
-// whileInView={"show"}
-// viewport={{ once: false, amount: 0.2 }}
-
-// interface MarkerData {
-//   position: LatLngTuple;
-//   title: string;
-//   subtitle: string;
-// }
-
-// import { useEffect, useState } from "react";
 
 const markers = [
   {
@@ -50,24 +38,6 @@ const Map = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px )",
   });
-  // const isMobile = useMediaQuery({
-  //   query: "(max-width: 768px )",
-  // });
-  // console.log(isMobile);
-
-  // const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
-
-  // if (!isClient) {
-  //   return null; // Return null during server-side rendering
-  // }
-
-  // Import Leaflet components only when running on the client-side
-  // const { MapContainer, TileLayer } = require("react-leaflet");
-  // const { Icon } = require("leaflet");
 
   return (
     <section>
@@ -81,6 +51,7 @@ const Map = () => {
           attribution='&copy; <a href = "https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
+        {/*  */}
       </MapContainer>
     </section>
   );
