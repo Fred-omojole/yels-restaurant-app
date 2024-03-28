@@ -8,6 +8,13 @@ import { fadeIn } from "../../variants";
 
 import "leaflet/dist/leaflet.css";
 
+import dynamic from "next/dynamic";
+
+const DynamicMapContainer = dynamic(
+  () => import("react-leaflet").then((mod) => mod.MapContainer),
+  { ssr: false } // Disable SSR for this component
+);
+
 type MarkerData = {
   position: LatLngExpression;
   title: string;
@@ -48,7 +55,7 @@ const Map = () => {
 
   return (
     <section>
-      <MapContainer
+      <DynamicMapContainer
         center={[34.052235, -118.243683]}
         zoom={10}
         className={`${isMobile ? "h-[300px]" : "h-[900px]"} z-10`}
@@ -66,7 +73,7 @@ const Map = () => {
             icon={customIcon}
           ></Marker>
         ))}
-      </MapContainer>
+      </DynamicMapContainer>
     </section>
   );
 };
