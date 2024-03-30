@@ -1,8 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
 import { Icon, LatLngExpression } from "leaflet";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
@@ -14,54 +13,15 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-import "leaflet/dist/leaflet.css";
-
-type MarkerData = {
-  position: LatLngExpression;
-  title: string;
-  subtitle: string;
-  image: string;
-};
-
-const markers: MarkerData[] = [
-  {
-    position: [34.052235, -118.243683],
-    title: "Location 1",
-    subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map/1.png",
-  },
-  {
-    position: [33.9748, -118.3356],
-    title: "Location 2",
-    subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map/2.png",
-  },
-  {
-    position: [34.0211, -118.3965],
-    title: "Location 3",
-    subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map/3.png",
-  },
-];
-
-const customIcon = new Icon({
-  iconUrl: "/pin-solid.svg",
-  iconSize: [40, 40],
-});
-
 const Map = () => {
-  const isMobile = useMediaQuery({
-    query: "(max-width: 768px )",
-          ))}
-        </MapContainer>
-      </motion.section>
-
+  return (
+    <>
       <motion.section
         variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView={"show"}
-        viewport={{ once: false, amount: 0.4 }}
-        className="bg-footer bg-cover bg-no-repeat pt-16 text-white mt-2"
+        viewport={{ once: false, amount: 0.3 }}
+        className="bg-footer bg-cover bg-no-repeat pt-16 text-white mt-20"
       >
         <div className="container mx-auto">
           {/* logo */}
