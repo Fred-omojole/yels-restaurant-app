@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 import { fadeIn } from "../../variants";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { truncate } from "fs";
 
 const menuBar = [
   {
