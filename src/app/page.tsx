@@ -19,7 +19,7 @@ export default function Home() {
       <Map />
       <Footer />
       {/* <StyleGuide /> */}
-      <div className="h-[4000px]"></div>
+      {/* <div className="h-[4000px]"></div> */}
     </main>
   );
 }
