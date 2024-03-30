@@ -6,7 +6,7 @@ import MenuBar from "@/components/MenuBar";
 import Reservation from "@/components/Reservation";
 // import StyleGuide from "@/components/StyleGuide";
 import Map from "@/components/Map";
-import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
       <Reservation />
       <About />
       <Map />
+      <Footer />
       {/* <StyleGuide /> */}
       <div className="h-[4000px]"></div>
     </main>

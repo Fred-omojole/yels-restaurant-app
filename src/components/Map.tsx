@@ -8,13 +8,6 @@ import { fadeIn } from "../../variants";
 
 import "leaflet/dist/leaflet.css";
 
-import dynamic from "next/dynamic";
-
-const DynamicMapContainer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.MapContainer),
-  { ssr: false } // Disable SSR for this component
-);
-
 type MarkerData = {
   position: LatLngExpression;
   title: string;
@@ -27,19 +20,19 @@ const markers: MarkerData[] = [
     position: [34.052235, -118.243683],
     title: "Location 1",
     subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map",
+    image: "/map/1.png",
   },
   {
     position: [33.9748, -118.3356],
     title: "Location 2",
     subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map",
+    image: "/map/2.png",
   },
   {
     position: [34.0211, -118.3965],
     title: "Location 3",
     subtitle: "Lorem ipsum dolor sit amet, consecutor adipsicising elit",
-    image: "/map",
+    image: "/map/3.png",
   },
 ];
 
@@ -54,10 +47,17 @@ const Map = () => {
   });
 
   return (
-    <section>
-      <DynamicMapContainer
+    <motion.section
+      variants={fadeIn("up", 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+      className="relative xl:after:w-full xl:after:h-[240px] xl:after:bg-gradient-to-b xl:after:from-white xl:after:via-white/80 xl:after:to-white/20 xl:after:absolute xl:after:z-20"
+      id="contact"
+    >
+      <MapContainer
         center={[34.052235, -118.243683]}
-        zoom={10}
+        zoom={isMobile ? 10 : 12}
         className={`${isMobile ? "h-[300px]" : "h-[900px]"} z-10`}
         zoomControl={false}
       >
@@ -67,14 +67,27 @@ const Map = () => {
         />
         {/* markers */}
         {markers.map((marker, index) => (
-          <Marker
-            key={index}
-            position={marker.position}
-            icon={customIcon}
-          ></Marker>
+          <Marker key={index} position={marker.position} icon={customIcon}>
+            <Popup>
+              <div className="flex gap-x-[30px]">
+                <div className="flex-1">
+                  <h3>{marker.title}</h3>
+                  <p className="leading-snug">{marker.subtitle}</p>
+                </div>
+                <div className="flex-1">
+                  <Image
+                    src={marker.image}
+                    alt="image"
+                    width={130}
+                    height={160}
+                  />
+                </div>
+              </div>
+            </Popup>
+          </Marker>
         ))}
-      </DynamicMapContainer>
-    </section>
+      </MapContainer>
+    </motion.section>
   );
 };
 
