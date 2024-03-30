@@ -9,7 +9,7 @@ const links = [
   { path: "home", name: "Home", offset: -50 },
   { path: "menu", name: "Menu", offset: -50 },
   { path: "about", name: "About", offset: -150 },
-  { path: "contact", name: "Contact", offset: 0 },
+  { path: "more", name: "More", offset: 0 },
   // { path: "reservation", name: "reservation", offset: 50 },
 ];
 

@@ -17,6 +17,7 @@ const Map = () => {
   return (
     <>
       <motion.section
+        id="more"
         variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView={"show"}
